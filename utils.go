@@ -158,7 +158,7 @@ func parseNumber(number string) (LNumber, error) {
 func parseInt64(number string) (int64, error) {
 	var value int64
 	number = strings.Trim(number, " \t\n")
-	if v, err := strconv.ParseInt(number, 10, LNumberBit); err != nil {
+	if v, err := strconv.ParseInt(number, 0, LNumberBit); err != nil {
 		if v2, err2 := strconv.ParseFloat(number, LNumberBit); err2 != nil {
 			return int64(0), err2
 		} else {
